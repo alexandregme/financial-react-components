@@ -1,13 +1,6 @@
 {
   "name": "financial-react-components",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start -p $PORT",
-    "export": "next build && next export -o ./build",
-    "prepublish": "export"
-  },
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
