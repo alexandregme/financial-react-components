@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Input = ()=>(<div> input </div>);
+const Input = ()=><input />;
 
 export default Input;
