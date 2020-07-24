@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Button = ()=> <button>button</button>;
+const Button = ({label})=> (
+    <button
+        onClick={()=>alert('oie')}
+    >
+        {label}
+    </button>
+);
 
 export default Button;

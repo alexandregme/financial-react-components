@@ -1,4 +1,43 @@
 {
   "name": "financial-react-components",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "TODO",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel components -d build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preblublish": "yarn run build",
+    "release": "np",
+    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "np": "^6.3.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandregme/financial-react-components.git"
+  },
+  "keywords": [
+    "financial"
+  ],
+  "author": "Alexandre Mendes (alexandre@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandregme/financial-react-components/issues"
+  },
+  "homepage": "https://github.com/alexandregme/financial-react-components#readme"
 }
