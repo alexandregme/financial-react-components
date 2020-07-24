@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Input = ()=> <button> test1e 123123123 sdfgsdfg </button>;
+const Input = ()=> <input/>;
 
 export default Input;
