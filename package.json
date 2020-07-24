@@ -8,6 +8,8 @@
     "build": "babel components -d build",
     "test": "jest --coverage --no-cache --runInBand",
     "test:watch": "jest --watchAll --coverage --no-cache --runInBand",
+    "eslint": "eslint ./ --color",
+    "eslint:fix": "yarn eslint --fix",
     "preblublish": "yarn build",
     "release": "np",
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install && yarn build"
@@ -25,6 +27,11 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
     "jest": "^26.1.0",
     "np": "^6.3.2",
     "watch": "^1.0.2"
