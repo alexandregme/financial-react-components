@@ -1,12 +1,13 @@
 {
   "name": "financial-react-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TODO",
   "main": "build/index.js",
   "scripts": {
+    "dev": "watch 'yarn build' components",
     "build": "babel components -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preblublish": "yarn run build",
+    "preblublish": "yarn build",
     "release": "np",
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install && yarn build"
   },
@@ -19,7 +20,8 @@
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
-    "np": "^6.3.2"
+    "np": "^6.3.2",
+    "watch": "^1.0.2"
   },
   "babel": {
     "presets": [

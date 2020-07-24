@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = ({label})=> (
     <button
-        onClick={()=>alert('oie')}
+        onClick={()=>alert('oieasdf123')}
     >
         {label}
     </button>
