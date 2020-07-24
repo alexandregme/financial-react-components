@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preblublish": "yarn run build",
     "release": "np",
-    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install"
+    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install && yarn build"
   },
   "dependencies": {
     "react": "^16.13.1",
