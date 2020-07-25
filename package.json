@@ -64,7 +64,8 @@
   },
   "homepage": "https://github.com/alexandregme/financial-react-components#readme",
   "keywords": [
-    "financial", "components"
+    "financial",
+    "components"
   ],
   "pre-commit": [
     "lint"
