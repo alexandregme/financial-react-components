@@ -10,6 +10,10 @@
     "test:watch": "jest --watchAll --coverage --no-cache --runInBand",
     "eslint": "eslint ./ --color",
     "eslint:fix": "yarn eslint --fix",
+    "stylelint": "stylelint ./**/*.scss -s scss",
+    "stylelint:fix": "yarn stylelint --fix",
+    "lint": "yarn eslint && yarn stylelint",
+    "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "preblublish": "yarn build",
     "release": "np",
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install && yarn build"
@@ -36,6 +40,13 @@
     "eslint-plugin-react": "^7.20.3",
     "jest": "^26.1.0",
     "np": "^6.3.2",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "watch": "^1.0.2"
   },
   "repository": {
@@ -50,5 +61,11 @@
   "bugs": {
     "url": "https://github.com/alexandregme/financial-react-components/issues"
   },
-  "homepage": "https://github.com/alexandregme/financial-react-components#readme"
+  "homepage": "https://github.com/alexandregme/financial-react-components#readme",
+  "pre-commit": [
+    "lint"
+  ],
+  "pre-push": [
+    "test"
+  ]
 }
