@@ -2,7 +2,7 @@
   "author": "Alexandre Mendes (alexandre@gmail.com)",
   "license": "ISC",
   "name": "financial-react-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TODO",
   "main": "build/index.js",
   "engines": {
