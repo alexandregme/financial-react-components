@@ -3,6 +3,10 @@
   "version": "1.0.2",
   "description": "TODO",
   "main": "build/index.js",
+  "engines": {
+    "node": ">=12.18.0",
+    "yarn": ">=1.22.4"
+  },
   "scripts": {
     "dev": "watch 'yarn build' components",
     "build": "babel components -d build --copy-files",
@@ -16,7 +20,7 @@
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "preblublish": "yarn build",
     "release": "np",
-    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && yarn install && yarn build"
+    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && npm cache clear --force && yarn cache clean && yarn install && yarn build"
   },
   "dependencies": {
     "bootstrap-scss": "^4.5.0",
