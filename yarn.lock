@@ -1731,6 +1731,11 @@ boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
+bootstrap-scss@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/bootstrap-scss/-/bootstrap-scss-4.5.0.tgz#c1e48d4050dec7885cc9acfc61d3df7827a134ca"
+  integrity sha512-6vCW3JBfOW7v9EQwyV0kWdEyvk2hf7U8TIojRgz19/nJoJGe8BQa1L/Tk7B0wmKEqHR/lA93Lhp+dLRphZt3vg==
+
 boxen@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-4.2.0.tgz#e411b62357d6d6d36587c8ac3d5d974daa070e64"
