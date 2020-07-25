@@ -22,7 +22,7 @@
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "prepublish": "yarn build",
     "postinstall": "yarn build",
-    "release": "np",
+    "release": "np --no-yarn",
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && npm cache clear --force && yarn cache clean && yarn install && yarn build"
   },
   "dependencies": {
