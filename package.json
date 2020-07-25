@@ -1,4 +1,6 @@
 {
+  "author": "Alexandre Mendes (alexandre@gmail.com)",
+  "license": "ISC",
   "name": "financial-react-components",
   "version": "1.0.2",
   "description": "TODO",
@@ -58,19 +60,11 @@
     "type": "git",
     "url": "git+https://github.com/alexandregme/financial-react-components.git"
   },
-  "keywords": [
-    "financial"
-  ],
-  "author": "Alexandre Mendes (alexandre@gmail.com)",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/alexandregme/financial-react-components/issues"
   },
   "homepage": "https://github.com/alexandregme/financial-react-components#readme",
-  "pre-commit": [
-    "lint"
-  ],
-  "pre-push": [
-    "test"
-  ]
+  "keywords": ["financial"],
+  "pre-commit": ["lint"],
+  "pre-push": ["test"]
 }
