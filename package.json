@@ -21,7 +21,7 @@
     "lint": "yarn eslint && yarn stylelint",
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "prepublishOnly": "yarn build",
-    "release": "np --no-yarn",
+    "release": "np",
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && npm cache clear --force && yarn cache clean && yarn install && yarn build"
   },
   "dependencies": {
