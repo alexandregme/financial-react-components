@@ -1,0 +1,31 @@
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead,
+  tbody {
+    td,
+    th {
+      vertical-align: middle;
+    }
+
+    tr {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.tablewrap {
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .table {
+    thead tr th {
+      position: sticky;
+      top: 0;
+    }
+  }
+}

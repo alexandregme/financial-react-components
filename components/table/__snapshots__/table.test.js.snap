@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table renders without crashing 1`] = `
+<div
+  className="tablewrap"
+>
+  <table
+    className="table table-striped table-hover"
+  >
+    <thead />
+  </table>
+</div>
+`;
