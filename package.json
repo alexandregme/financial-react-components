@@ -22,7 +22,7 @@
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "prepublishOnly": "yarn build",
     "release": "np",
-    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log && npm cache clear --force && yarn cache clean && yarn install && yarn build"
+    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log package-lock.json && npm cache clear --force && yarn cache clean && yarn install && yarn build"
   },
   "dependencies": {
     "bootstrap-scss": "^4.5.0",
