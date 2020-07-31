@@ -1,0 +1,24 @@
+@import "../colors";
+
+.modal {
+  &.show {
+    display: block;
+    padding-left: 0;
+  }
+
+  .modal-dialog {
+    max-width: 875px;
+
+    .modal-content {
+      border: none;
+    }
+  }
+}
+
+div.modal-backdrop {
+  background-color: $overlay;
+
+  &.show {
+    opacity: unset;
+  }
+}

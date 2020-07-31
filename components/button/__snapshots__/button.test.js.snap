@@ -2,8 +2,10 @@
 
 exports[`Button renders without crashing 1`] = `
 <button
+  className="btn btn-default"
+  disabled={false}
+  id={null}
+  onClick={[Function]}
   type="button"
->
-  button
-</button>
+/>
 `;

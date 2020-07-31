@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders without crashing 1`] = `
+<Modal
+  handleClose={[Function]}
+  show={false}
+  title="default title"
+/>
+`;
