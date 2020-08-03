@@ -58,6 +58,9 @@
     "stylelint-scss": "^3.18.0",
     "watch": "^1.0.2"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexandregme/financial-react-components.git"
