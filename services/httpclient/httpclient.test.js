@@ -3,7 +3,7 @@ import ConfigureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { STORE } from 'shared/store';
 import { AppIsFetching, FetchIsDone, SetDefaultMessage } from 'actions/app';
-import HTTPClient from 'services/httpclient/index';
+import HTTPClient from 'services/httpclient';
 
 describe('HTTPClient', () => {
   let httpClient;

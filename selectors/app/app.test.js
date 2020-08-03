@@ -7,7 +7,7 @@ import {
   GetModalLineItem,
   GetMessage,
   GetMessageType,
-} from 'selectors/app/index';
+} from 'selectors/app';
 import { DEFAULT_APP_STATE, STORE } from 'shared/store';
 
 describe('User Selector', () => {
