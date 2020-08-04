@@ -1,4 +1,4 @@
-import { DEFAULT_APP_STATE } from 'shared/store';
+import { DEFAULT_APP_STATE } from '../../shared/store';
 
 export const IsAppFetching = (modifiedApp) => modifiedApp.fetchingCalls > 0;
 

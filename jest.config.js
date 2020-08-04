@@ -19,7 +19,6 @@ module.exports = {
     '^components(.*)$': '<rootDir>/components/$1',
     '^reducers(.*)$': '<rootDir>/reducers/$1',
     '^selectors(.*)$': '<rootDir>/selectors/$1',
-    '^services(.*)$': '<rootDir>/services/$1',
     '^shared(.*)$': '<rootDir>/shared/$1',
     '^.+\\.(css|less|scss)$': 'babel-jest',
   },

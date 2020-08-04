@@ -10,13 +10,13 @@
     "yarn": ">=1.22.4"
   },
   "scripts": {
-    "dev": "watch 'yarn build' actions components reducers selectors services",
+    "dev": "watch 'yarn build' actions components reducers selectors shared",
     "build:actions": "babel actions -d build/actions --copy-files",
     "build:components": "babel components -d build/components --copy-files",
     "build:reducers": "babel reducers -d build/reducers --copy-files",
     "build:selectors": "babel selectors -d build/selectors --copy-files",
-    "build:services": "babel services -d build/services --copy-files",
-    "build": "yarn build:actions && yarn build:components && yarn build:reducers && yarn build:selectors && yarn build:services",
+    "build:shared": "babel shared -d build/shared --copy-files",
+    "build": "yarn build:actions && yarn build:components && yarn build:reducers && yarn build:selectors && yarn build:shared",
     "test": "jest --coverage --no-cache --runInBand",
     "test:watch": "jest --watchAll --coverage --no-cache --runInBand",
     "eslint": "eslint ./ --color",
@@ -30,14 +30,11 @@
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log package-lock.json && npm cache clear --force && yarn cache clean && yarn install && yarn build"
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "bootstrap-scss": "^4.5.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -60,7 +57,6 @@
     "np": "^6.3.2",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
-    "redux-mock-store": "^1.5.4",
     "stylelint": "^13.6.1",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
