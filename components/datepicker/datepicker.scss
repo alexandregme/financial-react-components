@@ -1,0 +1,41 @@
+@import "~react-dates/lib/css/_datepicker";
+
+.SingleDatePicker {
+  width: 150px;
+
+  .CalendarMonth_caption strong,
+  .DateInput_input,
+  .CalendarDay__default {
+    font-family: 'barlowregular', sans-serif;
+  }
+
+  .DateInput {
+    width: 134px;
+  }
+
+  .SingleDatePickerInput {
+    height: 30px;
+    margin-top: 2px;
+    border-radius: 3px;
+  }
+
+  .SingleDatePickerInput_calendarIcon {
+    position: relative;
+    bottom: 1px;
+    left: -5px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .SingleDatePicker_picker {
+    top: 31px;
+  }
+
+  .DateInput_input {
+    width: 146px;
+    height: 28px;
+    margin: 0 1px;
+    padding: 0 0 0 3px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select renders without crashing 1`] = `
+<select
+  className="select"
+  id={null}
+  name=""
+>
+  <option
+    key="0"
+    value="0"
+  >
+    There Are No Options
+  </option>
+</select>
+`;

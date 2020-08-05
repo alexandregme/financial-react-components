@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputLabel renders without crashing 1`] = `
+<div
+  className="inputlabel"
+>
+  <Label
+    className="bold"
+    htmlFor={null}
+    text={null}
+  />
+  <Input
+    handleOnChange={null}
+    handleOnFocus={[Function]}
+    id={null}
+    lineIndex={null}
+    magnifyingGlassHandleClick={null}
+    name=""
+  />
+</div>
+`;

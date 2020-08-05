@@ -1,0 +1,12 @@
+.selectlabel {
+  margin: 0 3px 0 0;
+
+  .label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .select {
+    margin-top: 2px;
+  }
+}

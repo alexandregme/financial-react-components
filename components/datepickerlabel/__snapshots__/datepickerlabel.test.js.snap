@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePickerLabel renders without crashing 1`] = `
+<div
+  className="datepickerlabel"
+>
+  <Label
+    className="bold"
+    htmlFor={null}
+    text={null}
+  />
+  <DatePicker
+    id={null}
+    name=""
+  />
+</div>
+`;

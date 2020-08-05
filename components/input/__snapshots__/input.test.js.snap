@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input renders without crashing 1`] = `<input />`;
+exports[`Input renders without crashing 1`] = `
+<div
+  className="inputwrapper"
+>
+  <input
+    className="input"
+    id={null}
+    name=""
+    onChange={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;

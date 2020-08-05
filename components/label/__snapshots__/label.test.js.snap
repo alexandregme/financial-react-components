@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label renders without crashing 1`] = `
+<label
+  className="label"
+  htmlFor={null}
+/>
+`;

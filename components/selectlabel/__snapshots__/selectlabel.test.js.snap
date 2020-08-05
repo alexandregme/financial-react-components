@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectLabel renders without crashing 1`] = `
+<div
+  className="selectlabel"
+>
+  <Label
+    className="bold"
+    htmlFor={null}
+    text={null}
+  />
+  <Select
+    concatLabelValue={false}
+    id={null}
+    name=""
+    options={
+      Array [
+        Object {
+          "label": "There Are No Options",
+          "value": "0",
+        },
+      ]
+    }
+  />
+</div>
+`;
