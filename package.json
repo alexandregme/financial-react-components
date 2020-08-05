@@ -32,6 +32,7 @@
   "dependencies": {
     "bootstrap-scss": "^4.5.0",
     "classnames": "^2.2.6",
+    "moment": "^2.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dates": "^21.8.0",

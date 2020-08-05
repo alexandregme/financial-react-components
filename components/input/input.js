@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../button';
 
 const Input = ({
-  name, handleOnChange, handleOnFocus, id, lineIndex, magnifyingGlassHandleClick,
+  id, name, handleOnChange, reference, lineIndex, magnifyingGlassHandleClick,
 }) => (
   <div className="inputwrapper">
     <input
@@ -11,7 +11,7 @@ const Input = ({
       id={id}
       name={name}
       onChange={handleOnChange}
-      onFocus={handleOnFocus}
+      ref={reference}
     />
     {magnifyingGlassHandleClick
         && (
@@ -28,20 +28,20 @@ const Input = ({
 
 Input.propTypes = {
   id: PropTypes.string,
-  lineIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   name: PropTypes.string,
   handleOnChange: PropTypes.func,
-  handleOnFocus: PropTypes.func,
+  reference: PropTypes.func,
+  lineIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   magnifyingGlassHandleClick: PropTypes.func,
 };
 
 Input.defaultProps = {
   id: null,
-  lineIndex: null,
   name: '',
   handleOnChange: () => {},
-  handleOnFocus: () => {},
-  magnifyingGlassHandleClick: null,
+  reference: () => {},
+  lineIndex: null,
+  magnifyingGlassHandleClick: undefined,
 };
 
 export default Input;

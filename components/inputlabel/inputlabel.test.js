@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import InputLabel from 'components/inputlabel';
 import Input from 'components/input';
 import Label from 'components/label';
@@ -28,11 +28,11 @@ describe('InputLabel', () => {
     expect(label).toHaveLength(1);
   });
 
-  it('expect identifier ( htmlFor ) prop is null', () => {
+  it('expect identifier htmlFor prop to be null', () => {
     expect(label.props().htmlFor).toBeNull();
   });
 
-  it('expect the text is empty', () => {
+  it('expect the text to be empty', () => {
     expect(label.props().text).toBeNull();
   });
 
@@ -41,23 +41,28 @@ describe('InputLabel', () => {
   });
 
   it('expect the name to be empty', () => {
-    expect(input.props().name).toEqual('');
+    expect(input.props().name).toBeNull();
   });
 
-  it('expect input handleOnChange prop to be null', () => {
-    expect(input.props().handleOnChange).toBeNull();
+  it('expect input handleOnChange prop to return undefined', () => {
+    expect(input.props().handleOnChange()).toBeUndefined();
+  });
+
+  it('expect the reference of the input to be undefined', () => {
+    expect(input.props().reference()).toBeUndefined();
   });
 
   it('expect input lineIndex prop to be null', () => {
     expect(input.props().lineIndex).toBeNull();
   });
 
-  it('expect input magnifyingGlassHandleClick prop to be null', () => {
-    expect(input.props().magnifyingGlassHandleClick).toBeNull();
+  it('expect input magnifyingGlassHandleClick prop to be undefined', () => {
+    expect(input.props().magnifyingGlassHandleClick).toBeUndefined();
   });
 });
 
 describe('InputLabel with custom props', () => {
+  const ref = React.createRef();
   let mountedInputLabel;
   let input;
   let label;
@@ -65,19 +70,19 @@ describe('InputLabel with custom props', () => {
   const props = {
     identifier: 'customId',
     text: 'customText',
-    name: 'customName',
     handleOnChange: () => 'handleOnChange',
+    reference: jest.fn(() => ref),
     lineIndex: 'lineIndex',
     magnifyingGlassHandleClick: () => 'magnifyingGlassClick',
   };
 
   beforeEach(() => {
-    mountedInputLabel = shallow(<InputLabel {...props} />);
+    mountedInputLabel = mount(<InputLabel {...props} />);
     label = mountedInputLabel.find(Label);
     input = mountedInputLabel.find(Input);
   });
 
-  it('expect identifier ( htmlFor ) Label prop is customId', () => {
+  it('expect identifier htmlFor Label prop is customId', () => {
     expect(label.props().htmlFor).toEqual(props.identifier);
   });
 
@@ -90,16 +95,21 @@ describe('InputLabel with custom props', () => {
   });
 
   it('expect to set the name as customName to inputLabel', () => {
-    expect(input.props().name).toEqual(props.name);
+    expect(input.props().name).toEqual(props.identifier);
   });
 
   it('expect input to have handleOnChange configuration with function', () => {
     expect(input.props().handleOnChange()).toEqual(props.handleOnChange());
   });
 
-  it('expect input lineIndex prop to be null', () => {
+  it('expect the reference to have a custom reference passed throw props', () => {
+    expect(input.props().reference).toBe(props.reference);
+  });
+
+  it('expect input lineIndex prop to have a custom value', () => {
     expect(input.props().lineIndex).toEqual(props.lineIndex);
   });
+
   it('expect input to have magnifyingGlassHandleClick configuration with function', () => {
     expect(input.props().magnifyingGlassHandleClick()).toEqual(props.magnifyingGlassHandleClick());
   });

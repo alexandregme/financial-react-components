@@ -5,14 +5,14 @@ exports[`SelectLabel renders without crashing 1`] = `
   className="selectlabel"
 >
   <Label
-    className="bold"
+    className=""
     htmlFor={null}
     text={null}
   />
   <Select
     concatLabelValue={false}
     id={null}
-    name=""
+    name={null}
     options={
       Array [
         Object {
@@ -21,6 +21,7 @@ exports[`SelectLabel renders without crashing 1`] = `
         },
       ]
     }
+    reference={[Function]}
   />
 </div>
 `;

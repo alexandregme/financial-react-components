@@ -5,31 +5,37 @@ import Label from '../label';
 import './selectlabel.scss';
 
 const SelectLabel = ({
-  identifier, name, text, options, concatLabelValue,
+  identifier, text, options, concatLabelValue, reference,
 }) => (
   <div className="selectlabel">
-    <Label htmlFor={identifier} className="bold" text={text} />
-    <Select id={identifier} name={name} options={options} concatLabelValue={concatLabelValue} />
+    <Label htmlFor={identifier} text={text} />
+    <Select
+      id={identifier}
+      name={identifier}
+      reference={reference}
+      options={options}
+      concatLabelValue={concatLabelValue}
+    />
   </div>
 );
 
 SelectLabel.propTypes = {
   identifier: PropTypes.string,
-  name: PropTypes.string,
   text: PropTypes.string,
-  concatLabelValue: PropTypes.bool,
+  reference: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.isRequired,
     label: PropTypes.isRequired,
   })),
+  concatLabelValue: PropTypes.bool,
 };
 
 SelectLabel.defaultProps = {
   identifier: null,
-  name: '',
   text: null,
-  concatLabelValue: false,
+  reference: () => {},
   options: [{ value: '0', label: 'There Are No Options' }],
+  concatLabelValue: false,
 };
 
 export default SelectLabel;

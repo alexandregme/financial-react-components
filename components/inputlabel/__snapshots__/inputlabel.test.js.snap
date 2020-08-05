@@ -5,17 +5,16 @@ exports[`InputLabel renders without crashing 1`] = `
   className="inputlabel"
 >
   <Label
-    className="bold"
+    className=""
     htmlFor={null}
     text={null}
   />
   <Input
-    handleOnChange={null}
-    handleOnFocus={[Function]}
+    handleOnChange={[Function]}
     id={null}
     lineIndex={null}
-    magnifyingGlassHandleClick={null}
-    name=""
+    name={null}
+    reference={[Function]}
   />
 </div>
 `;

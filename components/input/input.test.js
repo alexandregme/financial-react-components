@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Input from 'components/input';
 import Button from 'components/button';
 
@@ -43,8 +43,8 @@ describe('Input', () => {
     expect(input.props().onChange()).toBeUndefined();
   });
 
-  it('expect the return to be undefined to default function onFocus', () => {
-    expect(input.props().onFocus()).toBeUndefined();
+  it('expect the reference of the input to be undefined', () => {
+    expect(input.find('input').getElement().ref()).toBeUndefined();
   });
 
   it('call a function passed to it when simulate change behavior', () => {
@@ -54,50 +54,44 @@ describe('Input', () => {
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
 
-  it('call a function passed to it when simulate onfocus behavior', () => {
-    const mockCallBack = jest.fn();
-    const mountedInputWithCallback = shallow(<Input handleOnFocus={mockCallBack} />);
-    mountedInputWithCallback.find('input').simulate('focus');
-    expect(mockCallBack.mock.calls.length).toEqual(1);
-  });
-
   it('expect input magnifyingGlassClick prop to be null', () => {
     expect(input.props().magnifyingGlassHandleClick).toBeUndefined();
   });
 });
 
 describe('Input with custom props', () => {
+  const ref = React.createRef();
   let mountedInput;
   let input;
 
   const props = {
-    name: 'custom name',
     id: 'custom id',
-    lineIndex: 'custom lineIndex',
+    name: 'custom name',
     handleOnChange: () => 'custom onChange',
-    handleOnFocus: () => 'custom onFocus',
+    reference: jest.fn(() => ref),
+    lineIndex: 'custom lineIndex',
     magnifyingGlassHandleClick: () => 'magnifyingGlassHandleClick',
   };
 
   beforeEach(() => {
-    mountedInput = shallow(<Input {...props} />);
+    mountedInput = mount(<Input {...props} />);
     input = mountedInput.find('input');
-  });
-
-  it('expect the set custom name', () => {
-    expect(input.props().name).toEqual(props.name);
   });
 
   it('expect the set custom id', () => {
     expect(input.props().id).toEqual(props.id);
   });
 
+  it('expect the set custom name', () => {
+    expect(input.props().name).toEqual(props.name);
+  });
+
   it('expect onChange to return custom onChange', () => {
     expect(input.props().onChange()).toBe(props.handleOnChange());
   });
 
-  it('expect onFocus to return custom onFocus', () => {
-    expect(input.props().onFocus()).toBe(props.handleOnFocus());
+  it('expect the reference to have a custom reference passed throw props', () => {
+    expect(input.find('input').getElement().ref).toBe(props.reference);
   });
 
   it('expect input to have magnifyingGlassButton configuration with function', () => {

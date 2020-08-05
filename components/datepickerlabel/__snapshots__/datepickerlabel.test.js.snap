@@ -5,13 +5,16 @@ exports[`DatePickerLabel renders without crashing 1`] = `
   className="datepickerlabel"
 >
   <Label
-    className="bold"
+    className=""
     htmlFor={null}
     text={null}
   />
   <DatePicker
-    id={null}
-    name=""
+    date={null}
+    focused={false}
+    handleOnDateChange={[Function]}
+    handleOnFocusChange={[Function]}
+    identifier={null}
   />
 </div>
 `;

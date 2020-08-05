@@ -9,7 +9,6 @@ exports[`Input renders without crashing 1`] = `
     id={null}
     name=""
     onChange={[Function]}
-    onFocus={[Function]}
   />
 </div>
 `;

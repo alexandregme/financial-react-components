@@ -4,40 +4,48 @@ import cx from 'classnames';
 import './button.scss';
 
 const Button = ({
-  label, handleClick, id, className, disabled, children,
+  className,
+  id,
+  type,
+  disabled,
+  handleClick,
+  children,
+  text,
 }) => {
   const btnClassName = cx('btn', 'btn-default', className);
 
   return (
     <button
-      type="button"
-      onClick={handleClick}
-      id={id}
       className={btnClassName}
+      id={id}
+      type={type}
       disabled={disabled}
+      onClick={handleClick}
     >
       {children}
-      {label}
+      {text}
     </button>
   );
 };
 
 Button.propTypes = {
-  label: PropTypes.string,
-  handleClick: PropTypes.func,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  type: PropTypes.string,
   disabled: PropTypes.bool,
+  handleClick: PropTypes.func,
   children: PropTypes.element,
+  text: PropTypes.string,
 };
 
 Button.defaultProps = {
-  label: '',
-  handleClick: () => {},
-  id: null,
   className: '',
+  id: null,
   disabled: false,
+  type: 'button',
+  handleClick: () => {},
   children: null,
+  text: '',
 };
 
 export default Button;

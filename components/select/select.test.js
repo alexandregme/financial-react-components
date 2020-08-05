@@ -32,19 +32,24 @@ describe('Select', () => {
     expect(select.props().name).toEqual('');
   });
 
-  it('expect select concatLabelValue prop to be empty', () => {
-    expect(select.props().concatLabelValue).toBeFalsy();
+  it('expect the reference of the select to be undefined', () => {
+    expect(select.find('select').getElement().ref()).toBeUndefined();
   });
 
-  it('expect select id prop to be null', () => {
+  it('expect select options to receive default value', () => {
     const option = select.find('option');
     expect(option).toHaveLength(1);
     expect(option.props().value).toEqual('0');
     expect(option.text()).toEqual('There Are No Options');
   });
+
+  it('expect select concatLabelValue prop to be empty', () => {
+    expect(select.props().concatLabelValue).toBeFalsy();
+  });
 });
 
 describe('Select with custom props', () => {
+  const ref = React.createRef();
   let mountedSelect;
   let select;
   const options = [{
@@ -61,8 +66,9 @@ describe('Select with custom props', () => {
   const props = {
     id: 'customId',
     name: 'customName',
-    concatLabelValue: true,
+    reference: jest.fn(() => ref),
     options,
+    concatLabelValue: true,
   };
 
   beforeEach(() => {
@@ -76,6 +82,10 @@ describe('Select with custom props', () => {
 
   it('expect to set the name as customName', () => {
     expect(select.props().name).toEqual('customName');
+  });
+
+  it('expect the reference to have a custom reference passed throw props', () => {
+    expect(select.find('select').getElement().ref).toBe(props.reference);
   });
 
   it('expect select id prop to be null', () => {

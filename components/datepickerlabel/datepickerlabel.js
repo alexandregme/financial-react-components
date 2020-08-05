@@ -4,12 +4,17 @@ import Label from '../label';
 import DatePicker from '../datepicker';
 import './datepickerlabel.scss';
 
-const DatePickerLabel = ({ identifier, text, name }) => (
+const DatePickerLabel = ({
+  identifier, text, date, handleOnDateChange, focused, handleOnFocusChange,
+}) => (
   <div className="datepickerlabel">
-    <Label htmlFor={identifier} className="bold" text={text} />
+    <Label htmlFor={identifier} text={text} />
     <DatePicker
-      id={identifier}
-      name={name}
+      identifier={identifier}
+      date={date}
+      handleOnDateChange={handleOnDateChange}
+      focused={focused}
+      handleOnFocusChange={handleOnFocusChange}
     />
   </div>
 );
@@ -17,13 +22,19 @@ const DatePickerLabel = ({ identifier, text, name }) => (
 DatePickerLabel.propTypes = {
   identifier: PropTypes.string,
   text: PropTypes.string,
-  name: PropTypes.string,
+  date: PropTypes.string,
+  handleOnDateChange: PropTypes.func,
+  focused: PropTypes.bool,
+  handleOnFocusChange: PropTypes.func,
 };
 
 DatePickerLabel.defaultProps = {
   identifier: null,
   text: null,
-  name: '',
+  date: null,
+  handleOnDateChange: () => {},
+  focused: false,
+  handleOnFocusChange: () => {},
 };
 
 export default DatePickerLabel;

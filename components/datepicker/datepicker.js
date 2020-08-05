@@ -1,12 +1,19 @@
 import React from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import './datepicker.scss';
 
-const DatePicker = () => (
+const DatePicker = ({
+  identifier, date, handleOnDateChange, focused, handleOnFocusChange,
+}) => (
   <SingleDatePicker
-    onDateChange={() => {}}
-    onFocusChange={() => {}}
+    id={identifier}
+    date={moment(date)}
+    onDateChange={handleOnDateChange}
+    focused={focused}
+    onFocusChange={handleOnFocusChange}
     hideKeyboardShortcutsPanel
     showDefaultInputIcon
     numberOfMonths={1}
@@ -15,5 +22,21 @@ const DatePicker = () => (
     inputIconPosition="after"
   />
 );
+
+DatePicker.propTypes = {
+  identifier: PropTypes.string,
+  date: PropTypes.string,
+  handleOnDateChange: PropTypes.func,
+  focused: PropTypes.bool,
+  handleOnFocusChange: PropTypes.func,
+};
+
+DatePicker.defaultProps = {
+  identifier: '',
+  date: '2020-01-01T01:00:00.000Z',
+  handleOnDateChange: () => {},
+  focused: false,
+  handleOnFocusChange: () => {},
+};
 
 export default DatePicker;

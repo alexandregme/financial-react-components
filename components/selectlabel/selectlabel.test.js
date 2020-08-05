@@ -44,19 +44,24 @@ describe('SelectLabel', () => {
   });
 
   it('expect select name prop to be empty', () => {
-    expect(select.props().name).toEqual('');
+    expect(select.props().name).toBeNull();
   });
 
-  it('expect select concatLabelValue prop to be empty', () => {
-    expect(select.props().concatLabelValue).toBeFalsy();
+  it('expect the reference of the select to be undefined', () => {
+    expect(select.props().reference()).toBeUndefined();
   });
 
-  it('expect select to receive default props', () => {
+  it('expect select to receive default props for options', () => {
     expect(select.props().options).toEqual([{ label: 'There Are No Options', value: '0' }]);
+  });
+
+  it('expect select concatLabelValue prop to be false', () => {
+    expect(select.props().concatLabelValue).toBeFalsy();
   });
 });
 
 describe('SelectLabel with custom props', () => {
+  const ref = React.createRef();
   let mountedSelectLabel;
   let select;
   let label;
@@ -75,8 +80,9 @@ describe('SelectLabel with custom props', () => {
     identifier: 'customId',
     text: 'customText',
     name: 'customName',
-    concatLabelValue: true,
+    reference: jest.fn(() => ref),
     options,
+    concatLabelValue: true,
   };
 
   beforeEach(() => {
@@ -85,7 +91,7 @@ describe('SelectLabel with custom props', () => {
     select = mountedSelectLabel.find(Select);
   });
 
-  it('expect identifier ( htmlFor ) Label prop is customId', () => {
+  it('expect identifier htmlFor Label prop is customId', () => {
     expect(label.props().htmlFor).toEqual(props.identifier);
   });
 
@@ -97,15 +103,19 @@ describe('SelectLabel with custom props', () => {
     expect(select.props().id).toEqual(props.identifier);
   });
 
-  it('expect to set the name as customName', () => {
-    expect(select.props().name).toEqual('customName');
+  it('expect to set the name as a custom identifier', () => {
+    expect(select.props().name).toEqual(props.identifier);
   });
 
-  it('expect select concatLabelValue prop to be empty', () => {
-    expect(select.props().concatLabelValue).toBeTruthy();
+  it('expect the reference to have a custom reference passed throw props', () => {
+    expect(select.props().reference).toBe(props.reference);
   });
 
-  it('expect select to receive custom props', () => {
+  it('expect select to receive custom options', () => {
     expect(select.props().options).toEqual(props.options);
+  });
+
+  it('expect select concatLabelValue prop to be true', () => {
+    expect(select.props().concatLabelValue).toBeTruthy();
   });
 });

@@ -5,16 +5,18 @@ import Input from '../input';
 import './inputlabel.scss';
 
 const InputLabel = ({
-  identifier, text, name, handleOnChange, lineIndex, magnifyingGlassHandleClick,
+  identifier, text, handleOnChange, reference, lineIndex, magnifyingGlassHandleClick,
+
 }) => (
   <div className="inputlabel">
-    <Label htmlFor={identifier} className="bold" text={text} />
+    <Label htmlFor={identifier} text={text} />
     <Input
       id={identifier}
-      lineIndex={lineIndex}
-      name={name}
-      magnifyingGlassHandleClick={magnifyingGlassHandleClick}
+      name={identifier}
       handleOnChange={handleOnChange}
+      reference={reference}
+      lineIndex={lineIndex}
+      magnifyingGlassHandleClick={magnifyingGlassHandleClick}
     />
   </div>
 );
@@ -22,8 +24,8 @@ const InputLabel = ({
 InputLabel.propTypes = {
   identifier: PropTypes.string,
   text: PropTypes.string,
-  name: PropTypes.string,
   handleOnChange: PropTypes.func,
+  reference: PropTypes.func,
   lineIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   magnifyingGlassHandleClick: PropTypes.func,
 };
@@ -31,10 +33,10 @@ InputLabel.propTypes = {
 InputLabel.defaultProps = {
   identifier: null,
   text: null,
-  name: '',
-  handleOnChange: null,
+  handleOnChange: () => {},
+  reference: () => {},
   lineIndex: null,
-  magnifyingGlassHandleClick: null,
+  magnifyingGlassHandleClick: undefined,
 };
 
 export default InputLabel;
