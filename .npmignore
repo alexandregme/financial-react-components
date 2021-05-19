@@ -1,5 +1,4 @@
 .idea/
-components/
 coverage/
 node_modules/
 *.DS_Store*
