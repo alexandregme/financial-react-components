@@ -4,11 +4,6 @@
   "name": "financial-react-components",
   "version": "1.0.4",
   "description": "TODO",
-  "main": "build/index.js",
-  "engines": {
-    "node": ">=12.18.0",
-    "yarn": ">=1.22.4"
-  },
   "scripts": {
     "dev": "watch 'yarn build' actions components reducers selectors shared",
     "build:actions": "babel actions -d build/actions --copy-files",
@@ -25,7 +20,6 @@
     "stylelint:fix": "yarn stylelint --fix",
     "lint": "yarn eslint && yarn stylelint",
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
-    "prepublishOnly": "yarn build",
     "release": "np",
     "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log package-lock.json && npm cache clear --force && yarn cache clean && yarn install && yarn build"
   },
