@@ -21,7 +21,9 @@
     "lint": "yarn eslint && yarn stylelint",
     "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
     "release": "np",
-    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log package-lock.json && npm cache clear --force && yarn cache clean && yarn install && yarn build"
+    "fresh": "rm -rf ./build ./coverage ./node_modules ./yarn-error.log package-lock.json && npm cache clear --force && yarn cache clean && yarn install && yarn build",
+    "on": "mv node_modules/reactt node_modules/react && mv node_modules/react-reduxx node_modules/react-redux",
+    "off": "mv node_modules/react node_modules/reactt && mv node_modules/react-redux node_modules/react-reduxx"
   },
   "dependencies": {
     "bootstrap-scss": "^4.5.0",
